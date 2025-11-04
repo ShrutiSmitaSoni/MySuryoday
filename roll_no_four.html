@@ -1,17 +1,49 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Roll Number Four</title>
+    <meta charset="UTF-8">
+    <title>Personalized Greeting App - roll number 4 </title>
 </head>
 <body>
-    <h1>Hello World! Roll Number Four</h1>
 
 <h1>Navigation Menu</h1>
-    
-
     <!-- Basic link -->
     <p><a href="index.html">Back to the Home</a></p>
+
+
+    <h1>Enter Your Name:</h1>
     
-   
+    <input type="text" id="userNameInput" placeholder="Type your name here">
+    
+    <button onclick="greetUser()">Greet Me!</button>
+    
+    <p id="greetingOutput"></p>
+
+    <script>
+        // Define the function that runs when the button is clicked
+        function greetUser() {
+            
+            // Step 1: Get the value the user typed into the input field
+            const nameInput = document.getElementById("userNameInput");
+            const userName = nameInput.value; // .value gets the actual text
+            
+            // Step 2: Prepare the greeting message
+            let greetingMessage = "";
+            
+            if (userName) {
+                // If the user actually typed a name
+                greetingMessage = "Hello, " + userName + "!";
+            } else {
+                // If the input was left empty
+                greetingMessage = "Please enter your name to be greeted.";
+            }
+            
+            // Step 3: Find the output paragraph and put the message inside it
+            const outputElement = document.getElementById("greetingOutput");
+            outputElement.textContent = greetingMessage;
+        }
+    </script>
+
 </body>
 </html>
